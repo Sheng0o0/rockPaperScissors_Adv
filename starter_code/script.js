@@ -43,7 +43,8 @@ function pickWinner(userValue, aiValue) {
 
 // This function sets the scoreboard with the correct points
 function setScore() {
-
+$('#userPoint').text(userPoint);
+$('#aiPoint').text(aiPoint);
 }
 
 // This function captures the click and picks the winner
@@ -60,6 +61,13 @@ function evaluate(evt) {
     } else {
         $('#message').delay(50).text('You have lost!, Click a box to play again');
     }
+    if(winner == 'user'){
+        userPoint++;
+    }
+    else if(winner == 'ai'){
+        aiPoint++;
+    }
+    setScore();
 }
 
 // This function runs on page load
